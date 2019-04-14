@@ -1,0 +1,9 @@
+[package]
+name = "amethyst-detect-filetype"
+version = "0.1.0"
+authors = ["Jef <jackefransham@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+detect-filetype = { git = "https://github.com/Vurich/detect-filetype" }
+amethyst = "0.10"
