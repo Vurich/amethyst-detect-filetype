@@ -3,8 +3,9 @@ use amethyst::{
     renderer::{Texture, TextureData, TextureFormat, TextureMetadata},
 };
 use detect_filetype::{detect_filetype, FileType};
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Default, Serialize, Deserialize, Hash)]
 pub struct DetectTextureFormat;
 
 impl SimpleFormat<Texture> for DetectTextureFormat {

@@ -6,4 +6,5 @@ edition = "2018"
 
 [dependencies]
 detect-filetype = { git = "https://github.com/Vurich/detect-filetype" }
+serde = "1.0"
 amethyst = "0.10"
