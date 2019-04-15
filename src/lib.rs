@@ -4,6 +4,7 @@ use amethyst::{
 };
 use detect_filetype::{detect_filetype, FileType};
 
+#[derive(Debug, Copy, Clone)]
 pub struct DetectTextureFormat;
 
 impl SimpleFormat<Texture> for DetectTextureFormat {
