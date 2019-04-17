@@ -1,5 +1,6 @@
 use amethyst::{
-    assets::{Error, ErrorKind, Result, SimpleFormat},
+    assets::SimpleFormat,
+    error::Error,
     renderer::{Texture, TextureData, TextureFormat, TextureMetadata},
 };
 use detect_filetype::{detect_filetype, FileType};
@@ -13,13 +14,13 @@ impl SimpleFormat<Texture> for DetectTextureFormat {
 
     type Options = TextureMetadata;
 
-    fn import(&self, bytes: Vec<u8>, options: TextureMetadata) -> Result<TextureData> {
+    fn import(&self, bytes: Vec<u8>, options: TextureMetadata) -> Result<TextureData, Error> {
         let format = match detect_filetype(&bytes) {
             Some(FileType::Jpeg) => TextureFormat::Jpg,
             Some(FileType::Png) => TextureFormat::Png,
             Some(FileType::Bmp) => TextureFormat::Bmp,
             Some(FileType::Tga) => TextureFormat::Tga,
-            _ => return Err(Error::from_kind(ErrorKind::Asset(format!("Not an image")))),
+            _ => return Err(Error::from_string("Not an image")),
         };
 
         format.import(bytes, options)

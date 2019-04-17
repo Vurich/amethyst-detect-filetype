@@ -5,6 +5,6 @@ authors = ["Jef <jackefransham@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-detect-filetype = { git = "https://github.com/Vurich/detect-filetype" }
+amethyst = { git = "https://github.com/Vurich/amethyst.git" }
+detect-filetype = { git = "https://github.com/Vurich/detect-filetype.git" }
 serde = "1.0"
-amethyst = "0.10"
